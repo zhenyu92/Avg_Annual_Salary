@@ -1,4 +1,4 @@
-# International Country Census Data Insights Powered by Google Data Studio
+# New York Average Annual Salary Data Insights Powered by Tableau 2019
 This project is a part of the learning milestone of a Udemy course delivered by [Kirill Eremenko](https://www.udemy.com/tableau-2018/). 
 
 ### Author
@@ -23,4 +23,4 @@ Database can be downloaded from [Here](https://sds-platform-private.s3-us-east-2
 Tableau workbook for this project can be viewed and downloaded from [Here](https://public.tableau.com/profile/derrick1466#!/vizhome/AverageAnnualSalaryMap_15654455970630/AverageAnnualSalaryMap?publish=yes).
 
 Screenshot of the Dashboard: 
-![alt text](https://github.com/zhenyu92/Avg_Annual_Salary/blob/master/Average%20Annual%20Salary%20Map.png "Logo Title Text 1")
+![alt text](https://github.com/zhenyu92/Avg_Annual_Salary/blob/master/Average%20Annual%20Salary%20Map.png "Average Annual Salary Map")

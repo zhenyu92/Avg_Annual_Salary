@@ -1,5 +1,5 @@
 # International Country Census Data Insights Powered by Google Data Studio
-This project is a part of the learning milestone of a Udemy course delivered by [Chris Levy](https://www.udemy.com/sql-for-data-science-with-google-big-query/). 
+This project is a part of the learning milestone of a Udemy course delivered by [Kirill Eremenko](https://www.udemy.com/tableau-2018/). 
 
 ### Author
 [Derrick Chan](https://github.com/zhenyu92)
@@ -9,68 +9,18 @@ This project is a part of the learning milestone of a Udemy course delivered by 
 ### Project Status: [Completed]
 
 ### Project Objective
-The study is on the dateset of public international country census. To produce a dashboard which highlights interesting data points, metrics, and visualizations from the database.
+We have been hired by a community forum to analyse crime incidents occurring at New York City (NYC) parks. This is in support of their efforts to lobby for safer parks. We need to design an attention-grabbing visualisation which they will use to motivate for more police patrols in NYC public parks.
+
+We are required to analyse the crime incidents reported to the New York Police Department (NYPD), which have occurred at NYC parks during the first quarter of 2018. We are also required to build a visualisation within Tableau to enable the analysis of average salary across industries for the State of New York.
 
 ### Environment Prerequisites
-`Google Big Query` on `Google Cloud Platform` for data querying 
-
-`Google Data Studio` for data visualization
+`Tableau 2019` for data visualization
 
 ### Instruction
-Database can be accessed from the Big Query public data set:
+Database can be downloaded from [Here](https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/P1-nyc-park-crime-stats-q1-2018.pdf).
 
-`bigquery-public-data.census_bureau_international.country_names_area`
+### Import & Tuning in Tableau 2019
+Tableau workbook for this project can be viewed and downloaded from [Here](https://public.tableau.com/profile/derrick1466#!/vizhome/AverageAnnualSalaryMap_15654455970630/AverageAnnualSalaryMap?publish=yes).
 
-`bigquery-public-data.census_bureau_international.midyear_population`
-
-`bigquery-public-data.census_bureau_international.birth_death_growth_rates`
-
-`bigquery-public-data.census_bureau_international.mortality_life_expectancy`
-
-`bigquery-public-data.census_bureau_international.age_specific_fertility_rates`
-
-
-### Dataset Query
-```
-SELECT
-  c.country_name,
-  c.country_code,
-  c.country_area,
-  CAST(CONCAT(CAST(p.year AS string),'-01','-01') AS date) AS year,
-  p.midyear_population AS population,
-  b.crude_birth_rate,
-  b.crude_death_rate,
-  b.growth_rate,
-  b.net_migration,
-  m.infant_mortality,
-  m.life_expectancy,
-  f.total_fertility_rate
-FROM
-  `bigquery-public-data.census_bureau_international.country_names_area` c
-LEFT JOIN
-  `bigquery-public-data.census_bureau_international.midyear_population` p
-ON
-  c.country_code = p.country_code
-LEFT JOIN
-  `bigquery-public-data.census_bureau_international.birth_death_growth_rates` b
-ON
-  p.country_code = b.country_code
-  AND p.year = b.year
-LEFT JOIN
-  `bigquery-public-data.census_bureau_international.mortality_life_expectancy` m
-ON
-  m.country_code = b.country_code
-  AND b.year = m.year
-LEFT JOIN
-  `bigquery-public-data.census_bureau_international.age_specific_fertility_rates` f
-ON
-  f.country_code = m.country_code
-  AND f.year = m.year
-ORDER BY
-  c.country_name,
-  p.year
-```
-
-### Import & Tuning in Google Data Studio
 Screenshot of the Dashboard: 
-![alt text](https://github.com/zhenyu92/International_Country_Census/blob/master/International_Country_Census-1.jpg "Logo Title Text 1")
+![alt text](https://github.com/zhenyu92/Avg_Annual_Salary/blob/master/Average%20Annual%20Salary%20Map.png "Logo Title Text 1")

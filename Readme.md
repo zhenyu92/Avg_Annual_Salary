@@ -1,5 +1,5 @@
 # New York Average Annual Salary Data Insights Powered by Tableau 2019
-This project is a part of the learning milestone of a Udemy course delivered by [Kirill Eremenko](https://www.udemy.com/tableau-2018/). 
+This project is a part of the learning milestone of a Udemy course delivered by [SuperDataScience Team](https://www.udemy.com/tableau-2018/). 
 
 ### Author
 [Derrick Chan](https://github.com/zhenyu92)
